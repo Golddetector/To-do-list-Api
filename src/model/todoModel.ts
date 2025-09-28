@@ -11,9 +11,11 @@ let Todo_list: Todo[] = []
 let id_number: number = 1;
 // add a todo list
 const addTodo = (title: string) => {
-    const todo = {Id: id_number++, Title: title, Complete: false}
-    Todo_list.push(todo)
-    return todo;
+    const newTodo = {Id: id_number++, Title: title, Complete: false}
+    const oldTodo = Todo_list.find(todo => todo.Title === title)
+    if(oldTodo) return "There already exists a Todo with the samae title"
+    Todo_list.push(newTodo)
+    return newTodo;
 }
 
 // to complete the todo list
