@@ -1,5 +1,5 @@
 
-import { NextFunction } from "express";
+import { NextFunction, Request, Response } from "express";
 
 type asyncController = (req: Request,res:Response) => Promise<any>;
 
