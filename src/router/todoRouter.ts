@@ -1,19 +1,19 @@
 import express,{Request, Response} from "express"
-const trycatch = require("../utils/tryCatch")
+import { trycatch } from "../utils/tryCatch"
 const todoController = require("../controller/todoController")
 
 const router = express.Router()
 
 // display todo
-router.get('/', trycatch.trycatch(todoController.displayTodo))
+router.get('/', trycatch(todoController.displayTodo))
 
 // add todo
-router.post('/', trycatch.trycatch(todoController.addTodo))
+router.post('/', trycatch(todoController.addTodo))
 
 // delete todo
-router.delete('/:Id', trycatch.trycatch(todoController.deleteTodo))
+router.delete('/:Id', trycatch(todoController.deleteTodo))
 
 // update todo
-router.put('/:Id', trycatch.trycatch(todoController.updateToComplete))
+router.put('/:Id', trycatch(todoController.updateToComplete))
 
 export default router
